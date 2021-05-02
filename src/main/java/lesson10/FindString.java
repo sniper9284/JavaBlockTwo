@@ -5,20 +5,16 @@ import java.util.*;
 
 public class FindString {
 
-    private static String[] str;
-    private static List <String> minStrList;
-    private static List <String> maxStrList;
-
     public static void main(String[] args) throws IOException {
 
         Random rand = new Random();
-
-        minStrList = new ArrayList<String>();
-        maxStrList = new ArrayList<String>();
+        String[] str;
+        List <String> minStrList = new ArrayList<String>();
+        List <String> maxStrList = new ArrayList<String>();
 
         System.out.println("Введите любую строку для поиска самого короткого и самого длинного слов.");
         System.out.println("При наличае нескольких слов одинаковой длинны выведется одно - случайное.");
-        str = (new Scanner(System.in)).nextLine().trim().split("[\\s.,?!]+");
+        str = new Scanner(System.in).nextLine().trim().split("[\\s.,?!]+");
 
         int minLength = str[0].length();
         int maxLength = str[0].length();
@@ -39,9 +35,10 @@ public class FindString {
             }
         }
 
+        System.out.println("Количество слов " + str.length);
         String randomElementMin = minStrList.get(rand.nextInt(minStrList.size()));
-        System.out.println(randomElementMin);
+        System.out.println("Самое короткое слово: " + randomElementMin);
         String randomElementMax = maxStrList.get(rand.nextInt(maxStrList.size()));
-        System.out.println(randomElementMax);
+        System.out.println("Самое длинное слово: " + randomElementMax);
     }
 }
