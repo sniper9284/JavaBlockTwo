@@ -78,8 +78,8 @@ public class PddRunner extends Exception {
                 System.out.println(e);
             }
         }
-
-        System.out.println("Легковые авто");
+        System.out.println("___________________________________________________________");
+        System.out.println("Грузовые авто");
         for (int i=0; i < cargoCar.length; i++) {
             System.out.println("___________________________________________________________");
             try {
