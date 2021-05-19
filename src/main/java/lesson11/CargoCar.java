@@ -60,7 +60,7 @@ public class CargoCar implements Car {
     public void overelCar() throws CustomException {
         Kpp kpp = new Kpp();
         if (getWeight() < kpp.getWeight() || getHeight() < kpp.getHeight() || getWidth() < kpp.getWidth()) {
-            System.out.println("Авто с №" + getNum() + "имеет габариты (высота - " + getHeight() + " ширина - " + getWidth() + " длинна - " + getLength() + ") и весит - " + getWeight());
+            System.out.println("Авто с №" + getNum() + " имеет габариты (высота - " + getHeight() + " ширина - " + getWidth() + " длинна - " + getLength() + ") и весит - " + getWeight());
         } else if (getWeight() > kpp.getWeight()) {
             throw new CustomException("Авто с №" + getNum() + " не прошло контроль по весу.");
         } else if (getHeight() > kpp.getHeight()) {
