@@ -1,6 +1,6 @@
 package lesson11;
 
 public interface Car {
-    void speedRun() throws Exception;
-    void overelCar();
+    void speedRun() throws CustomException;
+    void overelCar() throws CustomException;
 }
