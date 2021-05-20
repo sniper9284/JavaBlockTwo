@@ -2,7 +2,7 @@ package lesson11;
 
 public class PddRunner extends Exception {
 
-    public static void main(String[] args) throws CustomException {
+    public static void main(String[] args) throws MaxSpeed80Exception, MaxSpeed100Exception, WeightException, HeightException, WidthException {
 
         Car[] car = new Car[30];
         for (int i=0; i<30; i++) {
@@ -20,7 +20,7 @@ public class PddRunner extends Exception {
                 car[i].speedRun();
                 car[i].overelCar();
                 System.out.println("------------------------------------------------------------------------------");
-            } catch (CustomException e) {
+            } catch (MaxSpeed80Exception | MaxSpeed100Exception | WeightException | HeightException | WidthException e) {
                 System.out.println(e);
             }
         }

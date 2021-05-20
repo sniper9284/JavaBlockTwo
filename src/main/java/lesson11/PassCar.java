@@ -2,15 +2,15 @@ package lesson11;
 
 public class PassCar implements Car {
     // number auto
-    int num;
+    private int num;
     // speed auto
-    int speed;
+    private int speed;
     // weight auto
-    int weight;
+    private int weight;
     // overel auto
-    double height;
-    double length;
-    double width;
+    private double height;
+    private double length;
+    private double width;
 
     public PassCar() {
         this.num = 100 + (int) (Math.random() * 199);
@@ -46,25 +46,25 @@ public class PassCar implements Car {
     }
 
     @Override
-    public void speedRun() throws CustomException {
+    public void speedRun() throws MaxSpeed100Exception, MaxSpeed80Exception {
         if (getSpeed() < 80) {
             System.out.println("Авто с №" + getNum() + " движется со скоростью " + getSpeed());
         } else if (getSpeed() > 80 & getSpeed() <= 100) {
-            throw new CustomException("Авто с №" + getNum() + " двигается с превышением скорости, максимум 80.");
+            throw new MaxSpeed80Exception("Авто с №" + getNum() + " двигается с превышением скорости, максимум 80.");
         } else if (getSpeed() > 100) {
-            throw new CustomException("Авто с №" + getNum() + " задержано полицией за превышение свыше 100 км/ч.");
+            throw new MaxSpeed100Exception("Авто с №" + getNum() + " задержано полицией за превышение свыше 100 км/ч.");
         }
     }
 
     @Override
-    public void overelCar() throws CustomException {
+    public void overelCar() throws WeightException, HeightException, WidthException {
         Kpp kpp = new Kpp();
         if (getWeight() > kpp.getWeight()) {
-            throw new CustomException("Авто с №" + getNum() + " не прошло контроль по весу.");
+            throw new WeightException("Авто с №" + getNum() + " не прошло контроль по весу.");
         } else if (getHeight() > kpp.getHeight()) {
-            throw new CustomException("Авто с №" + getNum() + " не прошло контроль по высоте.");
+            throw new HeightException("Авто с №" + getNum() + " не прошло контроль по высоте.");
         } else if (getWidth() > kpp.getWidth()) {
-            throw new CustomException("Авто с №" + getNum() + " не прошло контроль по ширине.");
+            throw new WidthException("Авто с №" + getNum() + " не прошло контроль по ширине.");
         } else {
             System.out.println("Авто с №" + getNum() + " имеет габариты (высота - " + getHeight() + " ширина - " + getWidth() + " длинна - " + getLength() + ") и весит - " + getWeight());
         }

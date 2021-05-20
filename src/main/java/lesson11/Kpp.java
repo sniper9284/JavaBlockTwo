@@ -2,10 +2,10 @@ package lesson11;
 
 public class Kpp {
     // weight auto
-    int weight;
+    private int weight;
     // overel auto
-    double height;
-    double width;
+    private double height;
+    private double width;
 
     public Kpp() {
         this.weight = 8;
