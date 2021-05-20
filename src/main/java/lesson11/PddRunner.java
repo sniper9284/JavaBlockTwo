@@ -4,6 +4,8 @@ public class PddRunner extends Exception {
 
     public static void main(String[] args) throws MaxSpeed80Exception, MaxSpeed100Exception, WeightException, HeightException, WidthException {
 
+        Kpp kpp = new Kpp();
+
         Car[] car = new Car[30];
         for (int i=0; i<30; i++) {
             int x = 1 + (int) (Math.random() * 2);
@@ -18,7 +20,7 @@ public class PddRunner extends Exception {
             try {
                 System.out.println("------------------------------------------------------------------------------");
                 car[i].speedRun();
-                car[i].overelCar();
+                car[i].overelCar(kpp);
                 System.out.println("------------------------------------------------------------------------------");
             } catch (MaxSpeed80Exception | MaxSpeed100Exception | WeightException | HeightException | WidthException e) {
                 System.out.println(e);

@@ -57,8 +57,7 @@ public class CargoCar implements Car {
     }
 
     @Override
-    public void overelCar() throws WeightException, HeightException, WidthException {
-        Kpp kpp = new Kpp();
+    public void overelCar(Kpp kpp) throws WeightException, HeightException, WidthException {
         if (getWeight() > kpp.getWeight()) {
             throw new WeightException("Авто с №" + getNum() + " не прошло контроль по весу.");
         } else if (getHeight() > kpp.getHeight()) {
