@@ -1,6 +1,6 @@
 package lesson11;
 
-public class PddRunner extends Exception {
+public class PddRunner extends RuntimeException {
 
     public static void main(String[] args) throws MaxSpeed80Exception, MaxSpeed100Exception, WeightException, HeightException, WidthException {
 
