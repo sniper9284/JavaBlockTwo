@@ -2,6 +2,7 @@ package lesson15;
 
 import lesson15.work.CoolEmployee;
 import lesson15.work.Employee;
+
 import java.util.*;
 
 public class CoolRunner {
@@ -44,10 +45,12 @@ public class CoolRunner {
         coolEmployee.printEmployee(employeesList, x);
 
         //удаление всех нечетных записей двигаясь с конца
-        boolean even = false;
-        for (ListIterator iterator = employeesList.listIterator(employeesList.size()); iterator.hasPrevious(); even = !even) {
+        boolean odd = false;
+        for (ListIterator iterator = employeesList.listIterator(employeesList.size()); iterator.hasPrevious(); odd = !odd) {
             iterator.previous();
-            if (even) iterator.remove();
+            if (odd) {
+                iterator.remove();
+            }
         }
         System.out.println(employeesList);
     }

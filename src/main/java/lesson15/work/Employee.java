@@ -1,22 +1,13 @@
 package lesson15.work;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.ToString;
 
 @Getter
+@AllArgsConstructor
+@ToString
 public class Employee {
     String fio;
     int workAge;
-
-    public Employee(String fio, int workAge) {
-        this.fio = fio;
-        this.workAge = workAge;
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "fio='" + fio + '\'' +
-                ", workAge=" + workAge +
-                '}';
-    }
 }
