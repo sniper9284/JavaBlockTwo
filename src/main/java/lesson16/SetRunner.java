@@ -1,5 +1,7 @@
 package lesson16;
 
+import lesson16.setWork.Employee;
+
 import java.math.BigDecimal;
 import java.util.Comparator;
 import java.util.Random;
