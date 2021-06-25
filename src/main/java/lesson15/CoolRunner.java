@@ -42,7 +42,7 @@ public class CoolRunner {
 
         //вывод имени при совпадении стажа работы
         CoolEmployee coolEmployee = new CoolEmployee();
-        coolEmployee.printEmployee(employeesList, x);
+        CoolEmployee.printEmployee(employeesList, x);
 
         //удаление всех нечетных записей двигаясь с конца
         boolean odd = false;
