@@ -7,7 +7,6 @@ import java.math.BigDecimal;
 @Data
 @AllArgsConstructor
 public class Employee {
-    String fio;
-    BigDecimal workAge;
-
+    private String fio;
+    private BigDecimal workAge;
 }
