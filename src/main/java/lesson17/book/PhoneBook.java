@@ -7,6 +7,6 @@ import java.util.Collection;
 @Data
 @AllArgsConstructor
 public class PhoneBook {
-    Abonent abonent;
-    Collection<Abonent> contacts;
+    private Abonent abonent;
+    private Collection<Abonent> contacts;
 }
