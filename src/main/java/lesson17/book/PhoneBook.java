@@ -1,11 +1,12 @@
 package lesson17.book;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.Collection;
 
 @Data
-@AllArgsConstructor
+@NoArgsConstructor
 public class PhoneBook {
     private Abonent abonent;
     private Collection<Abonent> contacts;

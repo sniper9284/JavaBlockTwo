@@ -11,6 +11,8 @@ public class Abonent {
     private String fio;
     private String number;
     private String operator;
+    private List<PhoneBook> contacts;
+
     private static final List<String> NANES = new ArrayList<>();
 
     static {
