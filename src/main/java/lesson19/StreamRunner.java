@@ -16,13 +16,12 @@ public class StreamRunner {
         String userString = reader.readLine();
         Stream.of(userString.split("[^A-Za-zА-Яа-я]+"))
                 .map(String::toLowerCase)
-                .distinct().sorted()
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
-                .entrySet().stream().
-                sorted(Map.Entry.comparingByKey())
+                .entrySet().stream()
+                .sorted(Map.Entry.comparingByKey())
                 .sorted(Comparator.comparing((Function<Map.Entry<String, Long>, Long>) Map.Entry::getValue)
                         .reversed())
-                .map(n -> n.getKey())
+                .map(Map.Entry::getKey)
                 .forEach(System.out::println);
     }
 }
