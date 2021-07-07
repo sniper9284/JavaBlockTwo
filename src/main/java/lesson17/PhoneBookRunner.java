@@ -3,6 +3,7 @@ package lesson17;
 import lesson17.book.Abonent;
 import lesson17.book.PhoneBook;
 
+import javax.swing.text.html.parser.Entity;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.*;
@@ -26,6 +27,55 @@ public class PhoneBookRunner {
         }
         findToSet(phoneBookResult);
         findToList(phoneBookResult);
+        findToMap(phoneBookResult);
+        findToArray(phoneBookResult);
+    }
+    //сравнивает только одну запись. Разобраться какого хрена так.
+    private static void findToArray(List<PhoneBook> result) {
+        Instant start = Instant.now();
+        List<Object> find = new ArrayList<>();
+        List<Object> res = new ArrayList<>();
+        List<Object> res2 = new ArrayList<>();
+        for (int i = 0; i < result.size(); i++) {
+            find.add(result.get(i).getContacts());
+        }
+        Object[] resArray = find.toArray();
+        System.out.println(resArray[0].toString());
+        res.add(resArray[0]);
+        for (int i = 1; i < resArray.length; i++) {
+            res2.add(resArray[i]);
+            res.removeAll(res2);
+        }
+        System.out.println("--------------");
+        System.out.println(res);
+        Instant finish = Instant.now();
+        long elapsed = Duration.between(start, finish).toMillis();
+        System.out.println("Прошло времени, мс: " + elapsed);
+    }
+
+    private static void findToMap(List<PhoneBook> result) {
+        Instant start = Instant.now();
+        List<Object> res = new ArrayList<>();
+        List<Object> one = new ArrayList<>();
+        List<Object> two = new ArrayList<>();
+        Map<Abonent, Collection<Abonent>> resultMap = new HashMap<>();
+        for (int i = 0; i < result.size(); i++) {
+            resultMap.put(result.get(i).getAbonent(), result.get(i).getContacts());
+        }
+        Iterator itr = resultMap.entrySet().iterator();
+            Map.Entry entryOne = (Map.Entry) itr.next();
+            one.add(entryOne.getValue());
+        while(itr.hasNext()) {
+            Map.Entry entry = (Map.Entry) itr.next();
+            two.add(entry.getValue());
+        }
+        one.retainAll(two);
+        res.add(two);
+        System.out.println("--------------");
+        System.out.println(res);
+        Instant finish = Instant.now();
+        long elapsed = Duration.between(start, finish).toMillis();
+        System.out.println("Прошло времени, мс: " + elapsed);
     }
 
     private static void findToList(List<PhoneBook> result) {
