@@ -18,7 +18,6 @@ public class RefRunner {
         System.out.println("В классе представлены конструкторы:" + Arrays.toString(physicalScoreClass.getConstructors()));
         System.out.println("В классе представлены поля:" + Arrays.toString(physicalScoreClass.getDeclaredFields()));
         System.out.println("В классе представлены методы:" + Arrays.toString(physicalScoreClass.getDeclaredMethods()));
-
         try {
             //обработка конструктора
             System.out.println(" ");
