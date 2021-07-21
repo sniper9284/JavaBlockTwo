@@ -1,6 +1,7 @@
 package lesson21.Logger;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.SneakyThrows;
 
 import java.io.FileNotFoundException;
@@ -12,10 +13,10 @@ import java.util.List;
 import java.util.Random;
 
 @Data
-public class LogManager {
+@NoArgsConstructor
+public class LogManager extends Thread {
     private static final List<String> LEVEL = new ArrayList<>();
-    private static String msg;
-    private static String level;
+    private String msg;
     FileOutputStream outputStream;
 
     {
@@ -34,19 +35,11 @@ public class LogManager {
         LEVEL.add("TRACE");
     }
 
-    public void setLevel() {
-        Random random = new Random();
-        this.level = LEVEL.get(random.nextInt(5));
-    }
-
-    public static String getLevel() {
-        return level;
-    }
-
     @SneakyThrows
-    public void writeToFile(String level, String msg) {
+    public void writeToFile() {
         Date date = new Date();
-        String str = "Дата/время: " + date + ", Уровень лога: " + level + ", Сообщение: " + msg + "\r\n";
+        Random random = new Random();
+        String str = "Дата/время: " + date + ", Уровень лога: " + LEVEL.get(random.nextInt(5)) + ", Сообщение: " + msg + "\r\n";
         this.outputStream.write(str.getBytes(StandardCharsets.UTF_8));
     }
 }
