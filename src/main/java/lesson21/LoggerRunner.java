@@ -23,7 +23,7 @@ public class LoggerRunner {
                 try {
                     Thread.sleep(random.nextInt(5000));
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    Thread.currentThread().interrupt();
                 }
             }
             String inputFileName = "d:/result.txt";
