@@ -50,6 +50,7 @@ public class LoggerRunner {
                 thread.interrupt();
                 thread2.interrupt();
                 thread3.interrupt();
+                t.cancel();
             }
         };
         System.out.println("Current time: " + new Date());

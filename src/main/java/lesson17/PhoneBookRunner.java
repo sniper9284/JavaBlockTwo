@@ -2,8 +2,6 @@ package lesson17;
 
 import lesson17.book.Abonent;
 import lesson17.book.PhoneBook;
-
-import javax.swing.text.html.parser.Entity;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.*;
@@ -63,8 +61,8 @@ public class PhoneBookRunner {
             resultMap.put(result.get(i).getAbonent(), result.get(i).getContacts());
         }
         Iterator itr = resultMap.entrySet().iterator();
-            Map.Entry entryOne = (Map.Entry) itr.next();
-            one.add(entryOne.getValue());
+        Map.Entry entryOne = (Map.Entry) itr.next();
+        one.add(entryOne.getValue());
         while(itr.hasNext()) {
             Map.Entry entry = (Map.Entry) itr.next();
             two.add(entry.getValue());
